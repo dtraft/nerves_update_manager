@@ -19,6 +19,13 @@ jobs:
           otp-version: 27
           elixir-version: 1.17.2
 
+      # Install Ubuntu Dependencies
+      - name: Install Nerves and Scenic Dependencies
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libmnl-dev build-essential
+          version: 1.0
+
       # Step: Define how to cache deps. Restores existing cache if present.
       - name: Cache deps
         id: cache-deps
