@@ -85,8 +85,7 @@ defmodule NervesUpdateManagerTest do
     test "downloads the available update" do
       # Arrange
       current_version =
-        Application.spec(:nerves_update_manager)[:vsn]
-        |> to_string()
+        Nerves.Runtime.KV.get_active("nerves_fw_version")
         |> Version.parse!()
 
       next_version = %{current_version | patch: current_version.patch + 1}

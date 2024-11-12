@@ -32,7 +32,7 @@ jobs:
         elixir-version: ${{matrix.elixir}}
 
     # Install Ubuntu Dependencies
-    - name: Install Nerves and Scenic Dependencies
+    - name: Install Nerves Dependencies
       uses: awalsh128/cache-apt-pkgs-action@latest
       with:
         packages: libmnl-dev build-essential
